@@ -1,30 +1,220 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dua Belas Mangga Official</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .foto-besar {
-            max-width: 90vw; /* Lebar maksimal 90% dari lebar layar */
-            max-height: 90vh; /* Tinggi maksimal 90% dari tinggi layar */
-            object-fit: contain; /* Memastikan rasio foto tetap terjaga */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangga Corporation</title>
+  <meta name="description" content="Mangga Corporation is an independent early-stage technology startup building digital products and making tech less boring.">
+  <meta name="theme-color" content="#FFC928">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mangga Corporation">
+  <meta property="og:description" content="Buahnya Mangga, Kelakuannya Amba — an independent tech startup building digital products.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mango: '#FFC928',
+            'mango-deep': '#F2AE00',
+            cream: '#FFF7DF',
+            leaf: '#39764A',
+            brown: '#35291F',
+          },
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            body: ['Nunito Sans', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Ubah 'nama-file.jpg' sesuai dengan nama foto Anda -->
-    <img src="/image/sahabat.jpeg" alt="Sahabat Selamanya" class="foto-besar">
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-mango">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="55" rx="35" ry="40" fill="#FFC928"/>
+        <ellipse cx="50" cy="55" rx="35" ry="40" fill="url(#loaderGrad)" />
+        <defs>
+          <linearGradient id="loaderGrad" x1="50" y1="15" x2="50" y2="95" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F2AE00"/>
+            <stop offset="1" stop-color="#FFC928"/>
+          </linearGradient>
+        </defs>
+        <path d="M55 20C55 20 65 10 75 15" stroke="#39764A" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="40" cy="48" rx="6" ry="8" fill="#35291F"/>
+        <ellipse cx="60" cy="48" rx="6" ry="8" fill="#35291F"/>
+        <ellipse cx="41" cy="46" rx="2" ry="2.5" fill="#FFF7DF"/>
+        <ellipse cx="61" cy="46" rx="2" ry="2.5" fill="#FFF7DF"/>
+        <path d="M45 62C45 62 50 68 55 62" stroke="#35291F" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+  </div>
 
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#home" class="nav-logo" aria-label="Mangga Corporation home">
+      <img src="image/Logo.jpg" alt="" width="36" height="36">
+      Mangga Corp
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu-close" id="menu-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="6" y1="6" x2="18" y2="18"/>
+        <line x1="6" y1="18" x2="18" y2="6"/>
+      </svg>
+    </button>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="section">
+    <div class="hero-content reveal">
+      <!-- <p class="hero-eyebrow">Independent Tech Startup</p> -->
+      <h1 class="hero-title">"Buahnya Mangga, <span class="accent">Kelakuannya Amba"</span></h1>
+      <p class="hero-desc">We are an independent team building digital products, exploring new ideas, and making the internet a little more interesting.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View Our Work</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+      <!-- <p class="hero-tagline">"Buahnya Mangga, Kelakuannya Amba"</p> -->
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-blob" aria-hidden="true"></div>
+      <div class="hero-mascot">
+        <img src="image/Mascot-1.png" alt="Confident mango mascot pointing forward" width="420" height="420">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="about-content reveal">
+      <span class="section-label">About Us</span>
+      <h2 class="about-title">Small team. Big mango.</h2>
+      <p class="about-text">Mangga Corporation is an early-stage technology startup focused on building its own digital products and exploring useful, interesting ways to apply technology. We are small by choice, curious by nature, and committed to making things that feel a little different.</p>
+      <p class="about-text">We do not take ourselves too seriously, but we take our work seriously enough to make it worth your time.</p>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-mascot">
+        <img src="image/Mascot-2.png" alt="Sleepy mango mascot" width="320" height="320">
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="projects-header reveal">
+      <span class="section-label">Projects</span>
+      <h2>What We Are Building</h2>
+      <p>Our current focus is a single product, built with care and a healthy amount of mango.</p>
+    </div>
+
+    <article class="project-card reveal" tabindex="0">
+      <div class="project-card-body">
+        <div class="project-card-header">
+          <h3 class="project-card-title">Vacato</h3>
+          <span class="badge" aria-label="Status: in development">
+            <span class="badge-dot" aria-hidden="true"></span>
+            IN DEVELOPMENT
+          </span>
+        </div>
+        <p class="project-card-desc">Vacato is our current featured project. It is actively being built by the Mangga Corporation team. We are not ready to share details yet, but we are excited about where it is heading.</p>
+        <div class="project-visual" aria-hidden="true">
+          <p class="project-visual-text">A sneak peek is coming soon.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="section">
+    <div class="reveal">
+      <span class="section-label">Team</span>
+      <h2>The People Behind the Mangos</h2>
+      <p class="team-intro">A small group of people who enjoy building things, sharing laughs, and occasionally do some mango stuffs.</p>
+    </div>
+    <div class="team-photo-wrapper reveal">
+      <img src="image/sahabat.jpeg" alt="Mangga Corporation team photograph — six team members posing together in a modern office" width="900" height="600">
+    </div>
+    <p class="team-caption reveal">The full crew, together.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="reveal">
+      <span class="section-label">Contact</span>
+      <h2>Let Us Connect</h2>
+      <p class="contact-intro">Follow along and see what we are up to. We share updates, experiments, and the occasional mango moment.</p>
+    </div>
+    <div class="social-links reveal">
+      <a href="https://www.instagram.com/manggacorp/" class="social-link" id="instagram-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://github.com/Mangga-Corp/" class="social-link" id="github-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-brand">Mangga Corporation</p>
+    <p class="footer-tagline">"Buahnya Mangga, Kelakuannya Amba"</p>
+    <ul class="footer-nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Mangga Corporation. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
